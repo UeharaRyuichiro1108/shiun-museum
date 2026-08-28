@@ -3,18 +3,16 @@
 import { useEffect, useState } from 'react';
 import { characters, type Character } from './character-content';
 import { newsItems } from './news-content';
+import { participantArtworks, ueharaArtworks, type UeharaArtwork } from './illustration-content';
 
 type Section = 'TOP' | 'キャラクター' | 'イラスト（上原）' | 'イラスト（参加者）' | '相関図';
-type Artwork = { title: string; src: string };
 
 const nav: Section[] = ['TOP', 'キャラクター', 'イラスト（上原）', 'イラスト（参加者）', '相関図'];
-const artworks: Artwork[] = [];
-const gifted: { name: string; src: string; url: string }[] = [];
 
 export default function Home() {
   const [section, setSection] = useState<Section>('TOP');
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [art, setArt] = useState<Artwork | null>(null);
+  const [art, setArt] = useState<UeharaArtwork | null>(null);
   const [menu, setMenu] = useState(false);
   const selected = characters.find((character) => character.id === selectedId);
 
@@ -51,14 +49,14 @@ export default function Home() {
           <section className="page-section">
             <Heading en="GALLERY">イラスト（上原）</Heading>
             <p className="lead">作品を選ぶと大きく表示されます。</p>
-            <div className="gallery">{artworks.map((item) => <button key={item.src} onClick={() => setArt(item)}><img src={item.src} alt={item.title} /><span>{item.title}</span></button>)}</div>
+            <div className="gallery">{ueharaArtworks.map((item) => <button key={item.id} onClick={() => setArt(item)}><img src={item.src} alt={item.title} /><span>{item.title}</span></button>)}</div>
           </section>
         )}
         {section === 'イラスト（参加者）' && (
           <section className="page-section">
             <Heading en="GUEST WORKS">イラスト（参加者）</Heading>
             <p className="lead">描いていただいた作品へのリンク集です。</p>
-            <div className="guest-grid">{gifted.map((item) => <a key={item.url} href={item.url} target="_blank" rel="noreferrer"><img src={item.src} alt="" /><div><b>{item.name} 様</b><span>Xで見る ↗</span></div></a>)}</div>
+            <div className="guest-grid">{participantArtworks.map((item) => <a key={item.id} href={item.url || item.src} target="_blank" rel="noreferrer"><img src={item.src} alt={`${item.name}様のイラスト`} /><div><b>{item.name} 様</b><span>{item.url ? 'Xで見る ↗' : '大きく見る ↗'}</span></div></a>)}</div>
           </section>
         )}
         {section === '相関図' && <Relationships onSelect={(id) => { setSection('キャラクター'); setSelectedId(id); }} />}

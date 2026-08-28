@@ -74,3 +74,34 @@ title: "新しいキャラクターを追加しました"
 ```
 
 日付は `年-月-日` の形式で記載してください。サイトでは新しい日付のお知らせから順番に表示されます。
+
+## イラスト（上原）を追加する方法
+
+1. 画像を `public/images/art/` に保存します。
+2. `content/illustrations/uehara/_template.md.example` を複製し、任意の半角英数字のファイル名へ変更します。
+3. 次の内容を編集してコミットします。
+
+```md
+---
+order: 10
+title: "イラストのタイトル"
+image: "/images/art/画像ファイル名.webp"
+---
+```
+
+## イラスト（参加者）を追加する方法
+
+1. 画像を `public/images/gift/` に保存します。
+2. `content/illustrations/participants/_template.md.example` を複製し、任意の半角英数字のファイル名へ変更します。
+3. 次の内容を編集してコミットします。
+
+```md
+---
+order: 10
+creator: "作者名"
+image: "/images/gift/画像ファイル名.webp"
+postUrl: "https://x.com/ユーザー名/status/ポスト番号"
+---
+```
+
+どちらもイラスト1件につきMarkdownを1ファイル作成します。`order` の数字が小さい作品から一覧へ表示されます。参加者作品にポストURLがない場合は `postUrl: ""` としてください。
