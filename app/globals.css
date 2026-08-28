@@ -3,3 +3,13 @@
 @media(max-width:760px){.site-header{align-items:center;flex-wrap:wrap;padding:16px 20px}.menu{display:block}.site-header nav{display:none;width:100%;flex-direction:column;align-items:stretch}.site-header nav.open{display:flex}.site-header nav button{text-align:left}.hero{min-height:64vh}.hero h1{font-size:clamp(50px,17vw,80px)}main{width:min(100% - 28px,1120px)}.page-section{padding-top:52px}.news{grid-template-columns:1fr;gap:5px}.news-list article{grid-template-columns:1fr;gap:6px}.profile{grid-template-columns:1fr}.profile-art{min-height:390px}.profile dl div{grid-template-columns:1fr;gap:5px}.gallery,.guest-grid{grid-template-columns:repeat(2,1fr)}.gallery span{opacity:1}.relation-panel{min-height:560px}.graph-node img{width:68px;height:68px}.relation-panel text{font-size:2.4px}footer{flex-direction:column}.modal{padding:14px}}
 @media(max-width:430px){.gallery,.guest-grid{grid-template-columns:1fr}}
 .profile .eyebrow{font-size:0}.profile .eyebrow::after{content:"SHIUN CURATOR";font-size:11px}
+
+/* 黒い展示空間へ直接コンテンツが浮かぶフレームレス表現 */
+.panel{margin:72px 0;padding:0;border:0;background:transparent;box-shadow:none}
+.news{margin:80px 0;padding:0;border:0;background:transparent;box-shadow:none}
+.character-card{padding:0;border:0;background:transparent}
+.character-card:hover{border-color:transparent;transform:none}
+.portrait-stack{margin:0 0 16px;background:none}
+.portrait-stack .hover{transform:translateY(5px)}
+@keyframes bounce{0%{transform:translateY(5px)}42%{transform:translateY(-9px)}68%{transform:translateY(1px)}100%{transform:translateY(0)}}
+@media(max-width:760px){.panel{margin:58px 0}.news{margin:64px 0}}
