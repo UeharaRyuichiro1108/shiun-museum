@@ -104,7 +104,7 @@ function CharacterList({ onSelect }: { onSelect: (id: string) => void }) {
 
 function CharacterDetail({ character, onBack }: { character: Character; onBack: () => void }) {
   const fields = [
-    ['性別', character.gender], ['身長', character.height], ['年齢', character.age], ['役職', character.role],
+    ['作成者', character.creator], ['性別', character.gender], ['身長', character.height], ['年齢', character.age], ['役職', character.role],
     ['動物', character.animal], ['性格', character.personality], ['特技', character.skill], ['能力', character.ability],
     ['生い立ち', character.background], ['その他', character.other],
   ];
@@ -112,7 +112,7 @@ function CharacterDetail({ character, onBack }: { character: Character; onBack: 
     <button className="back" onClick={onBack}>← キャラクター一覧へ</button>
     <div className="profile">
       <div className="profile-art"><img src={character.detailImage} alt={displayName(character)} /></div>
-      <div><p className="eyebrow">SHIUN CURATOR</p><h1 className="page-title">{displayName(character)}</h1><p className="lead">{character.role}</p><dl>{fields.map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl></div>
+      <div><p className="eyebrow">SHIUN CURATOR</p><h1 className="page-title">{displayName(character)}</h1><p className="lead">{character.role}</p><dl>{fields.map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>{character.postUrl && <a className="post-link" href={character.postUrl} target="_blank" rel="noreferrer">作成者のポストを見る ↗</a>}</div>
     </div>
     {character.description && <div className="panel markdown-body">{character.description.split(/\r?\n\s*\r?\n/).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>}
   </section>;

@@ -7,6 +7,8 @@ export type Character = {
   height: string;
   age: string;
   role: string;
+  creator: string;
+  postUrl: string;
   animal: string;
   personality: string;
   skill: string;
@@ -67,6 +69,8 @@ function parseCharacter(source: string): Character {
     height: text('height'),
     age: text('age'),
     role: text('role'),
+    creator: text('creator'),
+    postUrl: text('postUrl', ''),
     animal: text('animal'),
     personality: text('personality'),
     skill: text('skill'),

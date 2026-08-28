@@ -30,3 +30,4 @@
 .hero h1{order:1}.hero>.eyebrow{order:2;margin-top:0}.hero-copy{order:3;margin-top:20px}
 .graph-button{border:0;padding:0;color:var(--ink);background:transparent;font:inherit;cursor:pointer}
 .markdown-body{white-space:pre-line}
+.post-link{display:inline-flex;margin-top:22px;padding-bottom:5px;border-bottom:1px solid var(--accent);color:var(--accent);text-decoration:none}.post-link:hover{color:var(--ink);border-color:var(--ink)}
