@@ -134,7 +134,15 @@ function Relationships({ onSelect }: { onSelect: (id: string) => void }) {
     <Heading en="RELATIONSHIPS">相関図</Heading><p className="lead">キャラクター同士のつながりを確認できます。</p>
     {characters.length ? <div className="relation-panel">
       <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-        {links.map((link, index) => <g key={`${link.from.character.id}-${link.to.character.id}-${index}`}><path d={`M${link.from.x} ${link.from.y} L${link.to.x} ${link.to.y}`} /><text x={(link.from.x + link.to.x) / 2} y={(link.from.y + link.to.y) / 2}>{link.text}</text></g>)}
+        {links.map((link, index) => {
+          const lines = link.text.split('\n');
+          const labelX = (link.from.x + link.to.x) / 2;
+          const labelY = (link.from.y + link.to.y) / 2 - ((lines.length - 1) * 1.5);
+          return <g key={`${link.from.character.id}-${link.to.character.id}-${index}`}>
+            <path d={`M${link.from.x} ${link.from.y} L${link.to.x} ${link.to.y}`} />
+            <text x={labelX} y={labelY}>{lines.map((line, lineIndex) => <tspan key={lineIndex} x={labelX} dy={lineIndex === 0 ? 0 : 3}>{line}</tspan>)}</text>
+          </g>;
+        })}
       </svg>
       {nodes.map((node) => <button className="graph-node graph-button" key={node.character.id} style={{ left: `${node.x}%`, top: `${node.y}%` }} onClick={() => onSelect(node.character.id)}><img src={node.character.listImage} alt="" /><b>{node.character.name}</b></button>)}
     </div> : <p className="lead">キャラクターはまだ登録されていません。</p>}

@@ -18,7 +18,7 @@ other: "その他"
 listImage: "/images/characters/example-list.png"
 detailImage: "/images/characters/example-standing.png"
 relationships:
-  - "相手のid|このキャラクターから見た関係"
+  - "相手のid|このキャラクターから見た関係\n二行目の文章"
 ---
 
 ここに自由な紹介文を書きます。
