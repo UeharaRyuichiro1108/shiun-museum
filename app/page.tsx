@@ -62,6 +62,9 @@ function Relationships({ onSelect }: { onSelect: (id: string) => void }) {
     const to = byId.get(targetId.trim());
     return to ? { from, to, text: textParts.join('|').trim() } : null;
   }).filter((link): link is NonNullable<typeof link> => Boolean(link)));
+  const relationshipColors = ['#d9b86c', '#7fc7d9', '#d98ca3', '#8fc28a', '#b59ad9', '#d99d72', '#78a8df', '#d6cf79'];
+  const pairKey = (fromId: string, toId: string) => [fromId, toId].sort().join('|');
+  const pairKeys = Array.from(new Set(links.map((link) => pairKey(link.from.character.id, link.to.character.id)))).sort();
 
   return <section className="content-section relationships-section">
     <Heading en="RELATIONSHIPS">相関図</Heading><p className="lead">キャラクター同士のつながりを確認できます。</p>
@@ -82,9 +85,12 @@ function Relationships({ onSelect }: { onSelect: (id: string) => void }) {
       const endY = link.to.y - unitY * 7;
       const controlX = (startX + endX) / 2 + normalX * curveOffset;
       const controlY = (startY + endY) / 2 + normalY * curveOffset;
-      const labelX = (startX + 2 * controlX + endX) / 4 + normalX * (reciprocal ? 2 : 0);
-      const labelY = (startY + 2 * controlY + endY) / 4 + normalY * (reciprocal ? 2 : 0) - ((lines.length - 1) * 1.5);
-      return <g key={`${link.from.character.id}-${link.to.character.id}-${index}`}><path markerEnd="url(#relation-arrow)" d={`M${startX} ${startY} Q${controlX} ${controlY} ${endX} ${endY}`} /><text x={labelX} y={labelY}>{lines.map((line, lineIndex) => <tspan key={lineIndex} x={labelX} dy={lineIndex === 0 ? 0 : 3}>{line}</tspan>)}</text></g>;
+      const labelPosition = 0.3;
+      const inversePosition = 1 - labelPosition;
+      const labelX = inversePosition ** 2 * startX + 2 * inversePosition * labelPosition * controlX + labelPosition ** 2 * endX + normalX * 1.6;
+      const labelY = inversePosition ** 2 * startY + 2 * inversePosition * labelPosition * controlY + labelPosition ** 2 * endY + normalY * 1.6 - ((lines.length - 1) * 1.5);
+      const color = relationshipColors[pairKeys.indexOf(pairKey(link.from.character.id, link.to.character.id)) % relationshipColors.length];
+      return <g key={`${link.from.character.id}-${link.to.character.id}-${index}`}><path style={{ stroke: color }} markerEnd="url(#relation-arrow)" d={`M${startX} ${startY} Q${controlX} ${controlY} ${endX} ${endY}`} /><text style={{ fill: color }} x={labelX} y={labelY}>{lines.map((line, lineIndex) => <tspan key={lineIndex} x={labelX} dy={lineIndex === 0 ? 0 : 3}>{line}</tspan>)}</text></g>;
     })}</svg>{nodes.map((node) => <button className="graph-node" key={node.character.id} style={{ left: `${node.x}%`, top: `${node.y}%` }} onClick={() => onSelect(node.character.id)}><img src={node.character.listImage} alt="" /><b>{node.character.name}</b></button>)}</div> : <p className="lead">キャラクターはまだ登録されていません。</p>}
   </section>;
 }
