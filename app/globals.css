@@ -17,6 +17,9 @@
 @media(max-width:760px){.menu{display:none}.site-header{align-items:center;flex-direction:row;flex-wrap:wrap}.site-header nav,.site-header nav.open{display:flex;width:100%;flex-direction:row;align-items:center;overflow-x:auto}.site-header nav button{flex:0 0 auto;text-align:center}}
 .portrait-stack .normal,.character-card:hover .normal,.character-card.activating .normal{opacity:1;transform:none}
 .portrait-stack .hover,.character-card:hover .hover,.character-card.activating .hover{display:none;opacity:0;animation:none;transform:none}
+.profile dl .design-art-field{grid-template-columns:100px 1fr;align-items:start}
+.design-art-field dd img{width:100%;max-height:720px;object-fit:contain;object-position:left top}
+@media(max-width:760px){.profile dl .design-art-field{grid-template-columns:1fr}}
 
 /* 左側から開く縦型ナビゲーション */
 .site-header{justify-content:flex-start;min-height:72px;padding-left:76px}
