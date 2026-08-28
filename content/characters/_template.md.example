@@ -1,0 +1,24 @@
+---
+id: "半角英数字の識別名"
+order: 20
+name: "キャラクター名"
+reading: "ふりがな"
+gender: "未設定"
+height: "未設定"
+age: "未設定"
+role: "役職"
+animal: "動物"
+personality: "性格"
+skill: "特技"
+ability: "能力"
+background: "生い立ち"
+other: "その他"
+listImage: "/images/characters/example-list.png"
+detailImage: "/images/characters/example-standing.png"
+relationships:
+  - "相手のid|このキャラクターから見た関係"
+---
+
+ここに自由な紹介文を書きます。
+
+空行を入れると、サイトでも段落が分かれます。

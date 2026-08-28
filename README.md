@@ -12,3 +12,23 @@ npm run dev
 ## Cloudflare 自動公開
 
 Cloudflare Workers の「Git リポジトリをインポート」でこのGitHubリポジトリを選び、ビルドコマンドを `npm run build`、デプロイコマンドを `npx wrangler deploy` に設定します。以後は `main` ブランチへの更新が自動公開されます。
+
+## キャラクターを追加する方法
+
+1. `content/characters/_template.md.example` を複製します。
+2. 複製したファイル名を `新しいid.md` に変更します（例：`aoi.md`）。
+3. ファイル上部の各項目と、`---` より下の紹介文を編集します。
+4. 画像を `public/images/characters/` に保存し、Markdownの `listImage` と `detailImage` にパスを書きます。
+5. 変更をコミットして `main` ブランチへプッシュします。
+
+`id` は半角英数字とハイフンだけで、ほかのキャラクターと重複しない値にします。`order` の数字が小さいキャラクターから一覧へ表示されます。
+
+相関関係は次の形式で追加できます。
+
+```md
+relationships:
+  - "相手のid|関係の説明"
+  - "別の相手のid|別の説明"
+```
+
+相手側から見た関係も表示したい場合は、相手のMarkdownにも逆方向の関係を記載してください。
