@@ -27,3 +27,4 @@
 .site-header nav button{flex:0 0 auto;width:100%;min-height:52px;border:0;border-bottom:1px solid var(--line);padding:12px 8px;color:var(--muted);text-align:left;font-size:14px;letter-spacing:.08em}
 .site-header nav button:hover,.site-header nav button.active{border-color:var(--accent);color:var(--ink);padding-left:18px}
 @media(max-width:760px){.site-header{align-items:center;flex-direction:row;flex-wrap:nowrap;padding:16px 18px 16px 70px}.menu{display:inline-grid}.site-header nav,.site-header nav.open{position:fixed;width:min(300px,88vw);flex-direction:column;align-items:stretch}.site-header nav{transform:translateX(-102%)}.site-header nav.open{transform:translateX(0)}.site-header nav button{text-align:left}}
+.hero h1{order:1}.hero>.eyebrow{order:2;margin-top:0}.hero-copy{order:3;margin-top:20px}
