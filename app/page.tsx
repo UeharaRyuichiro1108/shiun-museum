@@ -9,7 +9,7 @@ const news=[['2026.08.28','志雲町立博物館の特設サイトを公開し�
 export default function Home(){
  const [section,setSection]=useState<Section>('TOP'),[detail,setDetail]=useState(false),[activating,setActivating]=useState(false),[art,setArt]=useState<Artwork|null>(null),[menu,setMenu]=useState(false);
  useEffect(()=>{window.scrollTo({top:0,behavior:'smooth'});setMenu(false)},[section,detail]);
- const openCharacter=()=>{if(window.matchMedia('(hover: none)').matches){setActivating(true);window.setTimeout(()=>{setDetail(true);setActivating(false)},560)}else setDetail(true)};
+ const openCharacter=()=>setDetail(true);
  return <><header className="site-header"><button className="brand" onClick={()=>{setSection('TOP');setDetail(false)}}>志雲町立博物館</button><button className="menu" aria-label="メニューを開く" onClick={()=>setMenu(!menu)}>MENU</button><nav className={menu?'open':''} aria-label="メインナビゲーション">{nav.map(item=><button key={item} className={section===item&&!detail?'active':''} onClick={()=>{setSection(item);setDetail(false)}}>{item}</button>)}</nav></header><main>
  {section==='TOP'&&<Top/>}
  {section==='キャラクター'&&(detail?<CharacterDetail onBack={()=>setDetail(false)}/>:<section className="page-section"><Heading en="CHARACTERS">キャラクター</Heading><p className="lead">志雲町立博物館に所属する学芸員をご紹介します。</p><div className="character-grid"><button className={`character-card ${activating?'activating':''}`} onClick={openCharacter}><span className="portrait-stack"><img className="normal" src="/images/chibi.png" alt="学芸員の仮画像"/><img className="hover" src="/images/hover.png" alt=""/></span><b>梓（あずさ）</b><small>植物標本担当</small></button></div></section>)}
