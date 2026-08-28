@@ -17,3 +17,13 @@
 @media(max-width:760px){.menu{display:none}.site-header{align-items:center;flex-direction:row;flex-wrap:wrap}.site-header nav,.site-header nav.open{display:flex;width:100%;flex-direction:row;align-items:center;overflow-x:auto}.site-header nav button{flex:0 0 auto;text-align:center}}
 .portrait-stack .normal,.character-card:hover .normal,.character-card.activating .normal{opacity:1;transform:none}
 .portrait-stack .hover,.character-card:hover .hover,.character-card.activating .hover{display:none;opacity:0;animation:none;transform:none}
+
+/* 左側から開く縦型ナビゲーション */
+.site-header{justify-content:flex-start;min-height:72px;padding-left:76px}
+.menu{position:fixed;top:18px;left:20px;z-index:50;display:inline-grid;width:38px;height:36px;place-items:center;border:0;padding:0;color:var(--ink);background:transparent;font-size:0;cursor:pointer}
+.menu::before{content:"☰";font:400 25px/1 Arial,sans-serif;letter-spacing:0}
+.site-header nav,.site-header nav.open{position:fixed;inset:0 auto 0 0;z-index:40;display:flex;width:min(300px,84vw);height:100dvh;flex-direction:column;align-items:stretch;gap:4px;overflow-y:auto;padding:82px 24px 32px;background:rgba(5,5,5,.98);border-right:1px solid var(--line);box-shadow:22px 0 70px rgba(0,0,0,.62);transform:translateX(-102%);transition:transform .28s ease}
+.site-header nav.open{transform:translateX(0)}
+.site-header nav button{flex:0 0 auto;width:100%;min-height:52px;border:0;border-bottom:1px solid var(--line);padding:12px 8px;color:var(--muted);text-align:left;font-size:14px;letter-spacing:.08em}
+.site-header nav button:hover,.site-header nav button.active{border-color:var(--accent);color:var(--ink);padding-left:18px}
+@media(max-width:760px){.site-header{align-items:center;flex-direction:row;flex-wrap:nowrap;padding:16px 18px 16px 70px}.menu{display:inline-grid}.site-header nav,.site-header nav.open{position:fixed;width:min(300px,88vw);flex-direction:column;align-items:stretch}.site-header nav{transform:translateX(-102%)}.site-header nav.open{transform:translateX(0)}.site-header nav button{text-align:left}}
