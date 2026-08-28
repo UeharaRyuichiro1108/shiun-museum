@@ -65,11 +65,26 @@ function Relationships({ onSelect }: { onSelect: (id: string) => void }) {
 
   return <section className="content-section relationships-section">
     <Heading en="RELATIONSHIPS">相関図</Heading><p className="lead">キャラクター同士のつながりを確認できます。</p>
-    {characters.length ? <div className="relation-panel"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">{links.map((link, index) => {
+    {characters.length ? <div className="relation-panel"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs><marker id="relation-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path className="arrow-head" d="M 0 0 L 10 5 L 0 10 z" /></marker></defs>{links.map((link, index) => {
       const lines = link.text.split('\n');
-      const labelX = (link.from.x + link.to.x) / 2;
-      const labelY = (link.from.y + link.to.y) / 2 - ((lines.length - 1) * 1.5);
-      return <g key={`${link.from.character.id}-${link.to.character.id}-${index}`}><path d={`M${link.from.x} ${link.from.y} L${link.to.x} ${link.to.y}`} /><text x={labelX} y={labelY}>{lines.map((line, lineIndex) => <tspan key={lineIndex} x={labelX} dy={lineIndex === 0 ? 0 : 3}>{line}</tspan>)}</text></g>;
+      const dx = link.to.x - link.from.x;
+      const dy = link.to.y - link.from.y;
+      const distance = Math.hypot(dx, dy) || 1;
+      const unitX = dx / distance;
+      const unitY = dy / distance;
+      const normalX = -unitY;
+      const normalY = unitX;
+      const reciprocal = links.some((other) => other.from.character.id === link.to.character.id && other.to.character.id === link.from.character.id);
+      const curveOffset = reciprocal ? 6 : 0;
+      const startX = link.from.x + unitX * 7;
+      const startY = link.from.y + unitY * 7;
+      const endX = link.to.x - unitX * 7;
+      const endY = link.to.y - unitY * 7;
+      const controlX = (startX + endX) / 2 + normalX * curveOffset;
+      const controlY = (startY + endY) / 2 + normalY * curveOffset;
+      const labelX = (startX + 2 * controlX + endX) / 4 + normalX * (reciprocal ? 2 : 0);
+      const labelY = (startY + 2 * controlY + endY) / 4 + normalY * (reciprocal ? 2 : 0) - ((lines.length - 1) * 1.5);
+      return <g key={`${link.from.character.id}-${link.to.character.id}-${index}`}><path markerEnd="url(#relation-arrow)" d={`M${startX} ${startY} Q${controlX} ${controlY} ${endX} ${endY}`} /><text x={labelX} y={labelY}>{lines.map((line, lineIndex) => <tspan key={lineIndex} x={labelX} dy={lineIndex === 0 ? 0 : 3}>{line}</tspan>)}</text></g>;
     })}</svg>{nodes.map((node) => <button className="graph-node" key={node.character.id} style={{ left: `${node.x}%`, top: `${node.y}%` }} onClick={() => onSelect(node.character.id)}><img src={node.character.listImage} alt="" /><b>{node.character.name}</b></button>)}</div> : <p className="lead">キャラクターはまだ登録されていません。</p>}
   </section>;
 }
