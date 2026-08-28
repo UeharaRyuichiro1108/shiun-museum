@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { characters, type Character } from './character-content';
+import { newsItems } from './news-content';
 
 type Section = 'TOP' | 'キャラクター' | 'イラスト（上原）' | 'イラスト（参加者）' | '相関図';
 type Artwork = { title: string; src: string };
@@ -9,11 +10,6 @@ type Artwork = { title: string; src: string };
 const nav: Section[] = ['TOP', 'キャラクター', 'イラスト（上原）', 'イラスト（参加者）', '相関図'];
 const artworks: Artwork[] = [];
 const gifted: { name: string; src: string; url: string }[] = [];
-const news = [
-  ['2026.08.28', '志雲町立博物館の特設サイトを公開しました'],
-  ['2026.08.20', 'キャラクター紹介を追加しました'],
-  ['2026.08.12', '展示イラストを更新しました'],
-];
 
 export default function Home() {
   const [section, setSection] = useState<Section>('TOP');
@@ -83,7 +79,7 @@ function Top() {
     <section className="hero"><p className="eyebrow">SHIUN MUNICIPAL MUSEUM</p><h1>志雲町立<br />博物館</h1><p className="hero-copy">青い鳥を探して</p></section>
     <section className="panel"><p className="eyebrow">INTRODUCTION</p><h2>初めに</h2><p>志雲町立博物館は上原龍一郎による一次創作「愛館市立郷土資料館」の派生創作です。「愛館市立郷土資料館」の世界観を基盤とした相互限定のうちよそ企画となっています。</p><a href="https://aidate-museum.uehararyuichiro.workers.dev/" target="_blank" rel="noreferrer">「愛館市立郷土資料館」公式サイトを見る ↗</a></section>
     <section className="panel"><p className="eyebrow">CURATOR</p><h2>学芸員とは</h2><p>博物館のスタッフです。</p><p>学芸員の見た目は担当の展示物と動物の要素が入ったものになっています。</p><p>学芸員は元々普通の人間です。死亡すると学芸員として雇用されます。</p><p>学芸員は歳をとりませんが、不死ではなく修復できない程の傷を受けると「破棄」となります。</p></section>
-    <section className="news"><div><p className="eyebrow">NEWS</p><h2>お知らせ</h2></div><div className="news-list">{news.map(([date, title]) => <article key={title}><time>{date}</time><span>{title}</span></article>)}</div></section>
+    <section className="news"><div><p className="eyebrow">NEWS</p><h2>お知らせ</h2></div><div className="news-list">{newsItems.map((item) => <article key={item.id}><time>{item.date.replaceAll('-', '.')}</time><span>{item.title}</span></article>)}</div></section>
   </>;
 }
 
