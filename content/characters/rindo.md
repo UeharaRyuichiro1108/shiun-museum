@@ -1,0 +1,28 @@
+---
+id: "rindo"
+order: 4
+name: "りんどー"
+reading: "りんどー"
+gender: "女性"
+height: "145cm"
+age: "12歳"
+role: "志雲町立博物館　食文化担当"
+creator: "のたろう"
+postUrl: "https://x.com/NoTARU23/status/2093142657761734782?s=20"
+animal: "いくら"
+personality: "?"
+ability: "食べたいと思った対象を塩漬けにできる。"
+background: "平成の時代に裕福な家庭に生まれたらしいが、本人はほとんど覚えていない。"
+other: "いくらになって食べられるのが夢。"
+fa: "〇"
+threeL: "〇"
+deepRelationship: "〇"
+ng: "特になし"
+creatorComment: "どうぞよろしくお願いします！！！"
+listImage: "/images/mini_rindo.webp"
+detailImage: "/images/design_rindo.webp"
+relationships: 
+- "mare|?"
+- "taisi|?"
+- "sumika|?"
+---

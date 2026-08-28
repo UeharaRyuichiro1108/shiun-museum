@@ -1,0 +1,28 @@
+---
+id: "sumika"
+order: 1
+name: "澄花"
+reading: "すみか"
+gender: "女性"
+height: "?"
+age: "?"
+role: "志雲町立博物館　絵画担当"
+creator: "朝露"
+postUrl: "https://x.com/AsaRamume/status/2092502448502173925?s=20"
+animal: "うさぎ"
+personality: "おっとりしているが感情は豊か"
+ability: "触れた絵画の制作時の風景、情景、感情を読み取って色彩を映写する。"
+background: "?"
+other: "色を吸い取る能力のため、腕に色味が移る。負の感情でできた作品を触るとヒビが入る。"
+fa: "〇"
+threeL: "〇"
+deepRelationship: "〇"
+ng: "特になし"
+creatorComment: "よろしくお願いします。"
+listImage: "/images/mini_sumika.webp"
+detailImage: "/images/design_sumika.webp"
+relationships: 
+- "mare|恋人"
+- "taisi|?"
+- "rindo|?"
+---

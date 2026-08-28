@@ -1,0 +1,28 @@
+---
+id: "mare"
+order: 2
+name: "真礼"
+reading: "まれ"
+gender: "女性"
+height: "152cm"
+age: "21歳"
+role: "志雲町立博物館　ぬいぐるみ担当"
+creator: "上原龍一郎"
+postUrl: "https://x.com/Aidate_info/status/2092949121749442622?s=20"
+animal: "キタキツネ"
+personality: "人懐こい不思議ちゃん"
+ability: "触れたものを任意でぬいぐるみに変える。戻すことも可。"
+background: "生前は泰史と兄妹だった。死ぬときも一緒だった。\n来世も一緒にいようと約束したが、学芸員になってリバーシブルになってしまい会うことが叶わなくなった。"
+other: "リバーシブルのぬいぐるみのように、外見が切り替わる。背中のチャックを開けると泰史になる。"
+fa: "〇"
+threeL: "△（相手が決まっているため）"
+deepRelationship: "〇"
+ng: "特になし"
+creatorComment: "不思議ちゃんです。よろしくお願いいたします。"
+listImage: "/images/mini_mare.webp"
+detailImage: "/images/design_mare.webp"
+relationships: 
+- "sumika|恋人"
+- "taisi|兄"
+- "rindo|?"
+---

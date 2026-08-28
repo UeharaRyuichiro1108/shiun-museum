@@ -1,0 +1,28 @@
+---
+id: "taisi"
+order: 3
+name: "泰史"
+reading: "たいし"
+gender: "男性"
+height: "184cm"
+age: "24歳"
+role: "志雲町立博物館　ぬいぐるみ担当"
+creator: "上原龍一郎"
+postUrl: "https://x.com/Aidate_info/status/2092949121749442622?s=20"
+animal: "キタキツネ"
+personality: "人懐こいおっとりさん"
+ability: "真礼が生み出したぬいぐるみを動かす"
+background: "生前は真礼と兄妹だった。死ぬときも一緒だった。\n来世も一緒にいようと約束したが、学芸員になってリバーシブルになってしまい会うことが叶わなくなった。"
+other: "リバーシブルのぬいぐるみのように、外見が切り替わる。背中のチャックを開けると真礼になる。"
+fa: "〇"
+threeL: "△（相手が決まっているため）"
+deepRelationship: "〇"
+ng: "特になし"
+creatorComment: "おっとりくんです。よろしくお願いいたします。"
+listImage: "/images/mini_taisi.webp"
+detailImage: "/images/design_taisi.webp"
+relationships: 
+- "sumika|好き"
+- "mare|妹"
+- "rindo|?"
+---
