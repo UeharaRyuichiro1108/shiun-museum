@@ -89,8 +89,15 @@ function Relationships({ onSelect }: { onSelect: (id: string) => void }) {
       const inversePosition = 1 - labelPosition;
       const labelX = inversePosition ** 2 * startX + 2 * inversePosition * labelPosition * controlX + labelPosition ** 2 * endX + normalX * 1.6;
       const labelY = inversePosition ** 2 * startY + 2 * inversePosition * labelPosition * controlY + labelPosition ** 2 * endY + normalY * 1.6 - ((lines.length - 1) * 1.5);
+      const directionPosition = 0.43;
+      const inverseDirection = 1 - directionPosition;
+      const directionX = inverseDirection ** 2 * startX + 2 * inverseDirection * directionPosition * controlX + directionPosition ** 2 * endX;
+      const directionY = inverseDirection ** 2 * startY + 2 * inverseDirection * directionPosition * controlY + directionPosition ** 2 * endY;
+      const tangentX = 2 * inverseDirection * (controlX - startX) + 2 * directionPosition * (endX - controlX);
+      const tangentY = 2 * inverseDirection * (controlY - startY) + 2 * directionPosition * (endY - controlY);
+      const directionAngle = Math.atan2(tangentY, tangentX) * 180 / Math.PI;
       const color = relationshipColors[pairKeys.indexOf(pairKey(link.from.character.id, link.to.character.id)) % relationshipColors.length];
-      return <g key={`${link.from.character.id}-${link.to.character.id}-${index}`}><path style={{ stroke: color }} markerEnd="url(#relation-arrow)" d={`M${startX} ${startY} Q${controlX} ${controlY} ${endX} ${endY}`} /><text style={{ fill: color }} x={labelX} y={labelY}>{lines.map((line, lineIndex) => <tspan key={lineIndex} x={labelX} dy={lineIndex === 0 ? 0 : 3}>{line}</tspan>)}</text></g>;
+      return <g key={`${link.from.character.id}-${link.to.character.id}-${index}`}><path style={{ stroke: color }} markerEnd="url(#relation-arrow)" d={`M${startX} ${startY} Q${controlX} ${controlY} ${endX} ${endY}`} /><polygon className="relation-direction" style={{ fill: color }} points="-1.7,-1.25 2,0 -1.7,1.25" transform={`translate(${directionX} ${directionY}) rotate(${directionAngle})`} /><text style={{ fill: color }} x={labelX} y={labelY}>{lines.map((line, lineIndex) => <tspan key={lineIndex} x={labelX} dy={lineIndex === 0 ? 0 : 3}>{line}</tspan>)}</text></g>;
     })}</svg>{nodes.map((node) => <button className="graph-node" key={node.character.id} style={{ left: `${node.x}%`, top: `${node.y}%` }} onClick={() => onSelect(node.character.id)}><img src={node.character.listImage} alt="" /><b>{node.character.name}</b></button>)}</div> : <p className="lead">キャラクターはまだ登録されていません。</p>}
   </section>;
 }
