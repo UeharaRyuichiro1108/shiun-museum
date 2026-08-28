@@ -48,7 +48,7 @@ function parseCharacter(source: string): Character {
   const values: Record<string, string | string[]> = {};
   let listKey = '';
   for (const rawLine of match[1].split(/\r?\n/)) {
-    const listItem = rawLine.match(/^\s+-\s+(.+)$/);
+    const listItem = rawLine.match(/^\s*-\s+(.+)$/);
     if (listItem && listKey) {
       (values[listKey] as string[]).push(unquote(listItem[1]));
       continue;
