@@ -22,6 +22,7 @@ ng: "NG事項"
 creatorComment: "作者からひと言"
 listImage: "/images/characters/example-list.png"
 detailImage: "/images/characters/example-standing.png"
+designImage: "/images/characters/example-design.png"
 relationships:
   - "相手のid|このキャラクターから見た関係\n二行目の文章"
 ---

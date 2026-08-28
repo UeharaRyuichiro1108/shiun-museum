@@ -21,6 +21,7 @@ ng: "特になし"
 creatorComment: "どうぞよろしくお願いします！！！"
 listImage: "/images/mini_rindo.webp"
 detailImage: "/images/design_rindo.webp"
+designImage: "/images/design_rindo.webp"
 relationships: 
 - "mare|?"
 - "taisi|?"

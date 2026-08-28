@@ -18,10 +18,20 @@ Cloudflare Workers の「Git リポジトリをインポート」でこのGitHub
 1. `content/characters/_template.md.example` を複製します。
 2. 複製したファイル名を `新しいid.md` に変更します（例：`aoi.md`）。
 3. ファイル上部の各項目と、`---` より下の紹介文を編集します。
-4. 画像を `public/images/characters/` に保存し、Markdownの `listImage` と `detailImage` にパスを書きます。`detailImage` の画像は詳細ページの設定一覧の一番下にある「デザイン画」欄にも表示されます。
+4. 画像を `public/images/characters/` に保存し、Markdownへ画像パスを書きます。
 5. 変更をコミットして `main` ブランチへプッシュします。
 
 `id` は半角英数字とハイフンだけで、ほかのキャラクターと重複しない値にします。`order` の数字が小さいキャラクターから一覧へ表示されます。
+
+画像は用途ごとに別々に指定できます。
+
+```md
+listImage: "/images/characters/一覧用画像.webp"
+detailImage: "/images/characters/詳細ページ上部画像.webp"
+designImage: "/images/characters/デザイン画.webp"
+```
+
+`designImage` を省略した場合は、従来どおり `detailImage` の画像がデザイン画欄にも表示されます。
 
 作成者名と元ポストは次の項目へ記載します。ポストがない場合は `postUrl: ""` としてください。
 

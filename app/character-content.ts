@@ -22,6 +22,7 @@ export type Character = {
   creatorComment: string;
   listImage: string;
   detailImage: string;
+  designImage: string;
   relationships: string[];
   description: string;
 };
@@ -89,6 +90,7 @@ function parseCharacter(source: string): Character {
     creatorComment: text('creatorComment'),
     listImage: text('listImage', '/images/chibi.png'),
     detailImage: text('detailImage', text('listImage', '/images/chibi.png')),
+    designImage: text('designImage', text('detailImage', text('listImage', '/images/chibi.png'))),
     relationships: Array.isArray(values.relationships) ? values.relationships : [],
     description: match[2].trim(),
   };

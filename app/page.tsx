@@ -107,7 +107,7 @@ function CharacterDetail({ character, onBack }: { character: Character; onBack: 
     <button className="back" onClick={onBack}>← キャラクター一覧へ</button>
     <div className="profile">
       <div className="profile-art"><img src={character.detailImage} alt={displayName(character)} /></div>
-      <div><p className="eyebrow">SHIUN CURATOR</p><h1 className="page-title">{displayName(character)}</h1><p className="lead">{character.role}</p><dl>{fields.map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}<div className="design-art-field"><dt>デザイン画</dt><dd><img src={character.detailImage} alt={`${displayName(character)}のデザイン画`} /></dd></div></dl>{character.postUrl && <a className="post-link" href={character.postUrl} target="_blank" rel="noreferrer">作成者のポストを見る ↗</a>}</div>
+      <div><p className="eyebrow">SHIUN CURATOR</p><h1 className="page-title">{displayName(character)}</h1><p className="lead">{character.role}</p><dl>{fields.map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}<div className="design-art-field"><dt>デザイン画</dt><dd><img src={character.designImage} alt={`${displayName(character)}のデザイン画`} /></dd></div></dl>{character.postUrl && <a className="post-link" href={character.postUrl} target="_blank" rel="noreferrer">作成者のポストを見る ↗</a>}</div>
     </div>
     {character.description && <div className="panel markdown-body">{character.description.split(/\r?\n\s*\r?\n/).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>}
   </section>;
