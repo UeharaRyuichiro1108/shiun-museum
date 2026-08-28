@@ -15,6 +15,11 @@ export type Character = {
   ability: string;
   background: string;
   other: string;
+  fa: string;
+  threeL: string;
+  deepRelationship: string;
+  ng: string;
+  creatorComment: string;
   listImage: string;
   detailImage: string;
   relationships: string[];
@@ -77,6 +82,11 @@ function parseCharacter(source: string): Character {
     ability: text('ability'),
     background: text('background'),
     other: text('other'),
+    fa: text('fa'),
+    threeL: text('threeL'),
+    deepRelationship: text('deepRelationship'),
+    ng: text('ng'),
+    creatorComment: text('creatorComment'),
     listImage: text('listImage', '/images/chibi.png'),
     detailImage: text('detailImage', text('listImage', '/images/chibi.png')),
     relationships: Array.isArray(values.relationships) ? values.relationships : [],

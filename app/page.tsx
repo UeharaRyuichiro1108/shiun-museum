@@ -106,7 +106,8 @@ function CharacterDetail({ character, onBack }: { character: Character; onBack: 
   const fields = [
     ['作成者', character.creator], ['性別', character.gender], ['身長', character.height], ['年齢', character.age], ['役職', character.role],
     ['動物', character.animal], ['性格', character.personality], ['特技', character.skill], ['能力', character.ability],
-    ['生い立ち', character.background], ['その他', character.other],
+    ['生い立ち', character.background], ['その他', character.other], ['FA', character.fa], ['3L', character.threeL],
+    ['深い関係', character.deepRelationship], ['NG', character.ng], ['作者からひと言', character.creatorComment],
   ];
   return <section className="page-section">
     <button className="back" onClick={onBack}>← キャラクター一覧へ</button>

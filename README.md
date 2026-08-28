@@ -30,6 +30,18 @@ creator: "作成者名"
 postUrl: "https://x.com/ユーザー名/status/ポスト番号"
 ```
 
+FA・3L・深い関係・NG・作者からひと言は、次の項目へ記載します。
+
+```md
+fa: "FAについて"
+threeL: "3Lについて"
+deepRelationship: "深い関係について"
+ng: "NG事項"
+creatorComment: "作者からひと言"
+```
+
+文章を二行以上にしたい場合は、改行したい位置へ `\n` を記載できます。
+
 相関関係は次の形式で追加できます。
 
 ```md
