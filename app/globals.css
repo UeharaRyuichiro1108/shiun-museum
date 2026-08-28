@@ -13,3 +13,5 @@
 .portrait-stack .hover{transform:translateY(5px)}
 @keyframes bounce{0%{transform:translateY(5px)}42%{transform:translateY(-9px)}68%{transform:translateY(1px)}100%{transform:translateY(0)}}
 @media(max-width:760px){.panel{margin:58px 0}.news{margin:64px 0}}
+.gallery:empty::before,.guest-grid:empty::before{content:"現在、展示中のイラストはありません。";grid-column:1/-1;padding:48px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--muted);text-align:center}
+@media(max-width:760px){.menu{display:none}.site-header{align-items:center;flex-direction:row;flex-wrap:wrap}.site-header nav,.site-header nav.open{display:flex;width:100%;flex-direction:row;align-items:center;overflow-x:auto}.site-header nav button{flex:0 0 auto;text-align:center}}
