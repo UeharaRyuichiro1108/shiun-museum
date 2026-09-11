@@ -20,7 +20,7 @@ deepRelationship: "〇"
 ng: "特になし"
 creatorComment: "どうぞよろしくお願いします！！！"
 listImage: "/images/mini_rindo.webp"
-listScale: 1.15
+listScale: 0.85
 detailImage: "/images/mini_rindo.webp"
 designImage: "/images/design_rindo.webp"
 relationships: 
