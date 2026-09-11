@@ -24,4 +24,5 @@ detailImage: "/images/mini_tadainu.webp"
 designImage: "/images/design_tadainu.webp"
 relationships: 
 - "rindo|仲良し"
+- "gomi|守る"
 ---

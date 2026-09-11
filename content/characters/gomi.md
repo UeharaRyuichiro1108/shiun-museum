@@ -23,4 +23,5 @@ listImage: "/images/mini_gomi.webp"
 detailImage: "/images/mini_gomi.webp"
 designImage: "/images/design_gomi.webp"
 relationships: 
+- "tadainu|そばにいても気にならない"
 ---
