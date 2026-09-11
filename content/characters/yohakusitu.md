@@ -1,0 +1,27 @@
+---
+id: "yohakusitu"
+order: 5
+name: "余白室"
+reading: "よはくしつ"
+gender: "女性"
+height: ""
+age: "28歳"
+role: "志雲町立博物館　雪担当"
+creator: "余白室"
+postUrl: "https://x.com/White_shirox_x/status/2093303478227734854?s=20"
+animal: "エゾオコジョ"
+personality: "人見知りで警戒心が強いが、心を許した相手にはよく懐く。おっとりしている。"
+ability: "雪で生き物や武器を作ることができる。しかし数分で溶けてしまう。"
+background: "生前の名前は鳴白（なしろ）。昭和の貧しい人形作家であった。人形を届ける道中でホワイトアウトに遭い凍死。"
+other: "「だるちゃん」という雪だるまの付喪神が相棒"
+fa: "〇"
+threeL: "百合のみ"
+deepRelationship: "〇"
+ng: "特になし"
+creatorComment: "余白室学芸員の百合のお相手を募集中です。よろしくお願いいたします。→確定済み"
+listImage: "/images/mini_yohakusitu.webp"
+detailImage: "/images/mini_yohakusitu.webp"
+designImage: "/images/design_yohakusitu.webp"
+relationships: 
+- "rindo|超仲良し"
+---

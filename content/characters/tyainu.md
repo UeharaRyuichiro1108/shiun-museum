@@ -1,0 +1,26 @@
+---
+id: "tyainu"
+order: 7
+name: "茶狗"
+reading: "ちゃいぬ"
+gender: "女性"
+height: "167cm"
+age: "17歳"
+role: "志雲町立博物館　歴史担当"
+creator: "K.Kさん"
+postUrl: "https://x.com/KKsan28/status/2093869294555889869?s=20"
+animal: "オオカミ"
+personality: "警戒心強めだが、チョロい。人にやさしくされると吐血する。仲間は大事にする。"
+ability: ""
+background: "アルビノとして産まれ、住んでいた集落を追い出された。その後、アルビノを食べると不死身になるという迷信を信じた集団に捕まり、監禁された。左腕と右手の指を奪われ、生かすために無理やり食事を摂らされていた。そんな生活を辞めたいと思い、壁に頭をぶつけて自殺した。"
+other: "義指をつけるとムズムズするので好きではないらしい"
+fa: "〇"
+threeL: "〇"
+deepRelationship: "〇"
+ng: "特になし"
+creatorComment: "よろしくお願いします！"
+listImage: "/images/mini_tyainu.webp"
+detailImage: "/images/mini_tyainu.webp"
+designImage: "/images/design_tyainu.webp"
+relationships: 
+---

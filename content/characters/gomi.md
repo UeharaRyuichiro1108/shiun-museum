@@ -1,0 +1,26 @@
+---
+id: "gomi"
+order: 6
+name: "五味"
+reading: "ごみ"
+gender: "男性"
+height: "173cm"
+age: "20代後半"
+role: "志雲町立博物館　弦楽器担当"
+creator: "デオキシリボ核"
+postUrl: "https://x.com/White_shirox_x/status/2093303478227734854?s=20"
+animal: "ヒガシニホントカゲ"
+personality: "人間嫌いで必要最低限の会話すら嫌がる。性格に難があり、他人からの親切な行為をうまく受け取れない。"
+ability: "「蜥蜴の縁切り」自身の尻尾を弓で切ることで、特定の人物から特定の人物に関する記憶を消す。尻尾が再生するまで能力は消えない。"
+background: "裕福な家庭で育った。親友を亡くした過去がある。妻子がいたが自殺した。死因は凍死。"
+other: "自分のコントラバスに名前を付けて愛でている。"
+fa: "〇"
+threeL: "〇"
+deepRelationship: "〇"
+ng: "特になし"
+creatorComment: ""
+listImage: "/images/mini_gomi.webp"
+detailImage: "/images/mini_gomi.webp"
+designImage: "/images/design_gomi.webp"
+relationships: 
+---

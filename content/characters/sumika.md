@@ -20,10 +20,8 @@ deepRelationship: "〇"
 ng: "特になし"
 creatorComment: "よろしくお願いします。"
 listImage: "/images/mini_sumika.webp"
-detailImage: "/images/design_sumika.webp"
+detailImage: "/images/mini_sumika.webp"
 designImage: "/images/design_sumika.webp"
 relationships: 
 - "mare|恋人"
-- "taisi|?"
-- "rindo|?"
 ---

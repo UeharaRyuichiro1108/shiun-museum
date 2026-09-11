@@ -20,10 +20,10 @@ deepRelationship: "〇"
 ng: "特になし"
 creatorComment: "おっとりくんです。よろしくお願いいたします。"
 listImage: "/images/mini_taisi.webp"
-detailImage: "/images/design_taisi.webp"
+detailImage: "/images/mini_taisi.webp"
 designImage: "/images/design_taisi.webp"
 relationships: 
 - "sumika|好き"
 - "mare|妹"
-- "rindo|?"
+- "rindo|恋愛の相談相手"
 ---
