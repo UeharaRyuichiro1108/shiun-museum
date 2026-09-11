@@ -20,7 +20,7 @@ deepRelationship: "〇"
 ng: "特になし"
 creatorComment: ""
 listImage: "/images/mini_gomi.webp"
-listScale: 1.15
+listScale: 1.10
 detailImage: "/images/mini_gomi.webp"
 designImage: "/images/design_gomi.webp"
 relationships: 

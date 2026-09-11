@@ -20,7 +20,7 @@ deepRelationship: "〇"
 ng: "特になし"
 creatorComment: "余白室学芸員の百合のお相手を募集中です。よろしくお願いいたします。→確定済み"
 listImage: "/images/mini_yohakusitu.webp"
-listScale: 1.2
+listScale: 1.08
 detailImage: "/images/mini_yohakusitu.webp"
 designImage: "/images/design_yohakusitu.webp"
 relationships: 
