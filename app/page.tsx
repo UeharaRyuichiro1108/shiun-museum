@@ -54,7 +54,7 @@ function CharacterDetail({ character, onBack }: { character: Character; onBack: 
 function Relationships({ onSelect }: { onSelect: (id: string) => void }) {
   const nodes = characters.map((character, index) => {
     const angle = (-90 + (360 / Math.max(characters.length, 1)) * index) * Math.PI / 180;
-    return { character, x: 50 + Math.cos(angle) * 34, y: 50 + Math.sin(angle) * 34 };
+    return { character, x: 50 + Math.cos(angle) * 40, y: 50 + Math.sin(angle) * 39 };
   });
   const byId = new Map(nodes.map((node) => [node.character.id, node]));
   const links = nodes.flatMap((from) => from.character.relationships.map((entry) => {
