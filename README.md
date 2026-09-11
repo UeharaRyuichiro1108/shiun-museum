@@ -27,11 +27,14 @@ Cloudflare Workers の「Git リポジトリをインポート」でこのGitHub
 
 ```md
 listImage: "/images/characters/一覧用画像.webp"
+listScale: 1
 detailImage: "/images/characters/詳細ページ上部画像.webp"
 designImage: "/images/characters/デザイン画.webp"
 ```
 
 `designImage` を省略した場合は、従来どおり `detailImage` の画像がデザイン画欄にも表示されます。
+
+一覧画像のキャラクターが大きすぎる場合は `listScale` を `0.9` など小さくし、小さすぎる場合は `1.1` など大きくします。
 
 作成者名と元ポストは次の項目へ記載します。ポストがない場合は `postUrl: ""` としてください。
 

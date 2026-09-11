@@ -20,6 +20,7 @@ deepRelationship: "〇"
 ng: "特になし"
 creatorComment: "よろしくお願いします。"
 listImage: "/images/mini_sumika.webp"
+listScale: 0.95
 detailImage: "/images/mini_sumika.webp"
 designImage: "/images/design_sumika.webp"
 relationships: 

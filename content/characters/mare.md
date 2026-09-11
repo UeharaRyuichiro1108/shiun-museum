@@ -20,6 +20,7 @@ deepRelationship: "〇"
 ng: "特になし"
 creatorComment: "不思議ちゃんです。よろしくお願いいたします。"
 listImage: "/images/mini_mare.webp"
+listScale: 0.85
 detailImage: "/images/mini_mare.webp"
 designImage: "/images/design_mare.webp"
 relationships: 

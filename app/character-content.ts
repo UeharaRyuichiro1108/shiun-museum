@@ -21,6 +21,7 @@ export type Character = {
   ng: string;
   creatorComment: string;
   listImage: string;
+  listScale: number;
   detailImage: string;
   designImage: string;
   relationships: string[];
@@ -89,6 +90,7 @@ function parseCharacter(source: string): Character {
     ng: text('ng'),
     creatorComment: text('creatorComment'),
     listImage: text('listImage', '/images/chibi.png'),
+    listScale: Number(text('listScale', '1')) || 1,
     detailImage: text('detailImage', text('listImage', '/images/chibi.png')),
     designImage: text('designImage', text('detailImage', text('listImage', '/images/chibi.png'))),
     relationships: Array.isArray(values.relationships) ? values.relationships : [],

@@ -20,6 +20,7 @@ deepRelationship: "〇"
 ng: "特になし"
 creatorComment: "よろしくお願いします！"
 listImage: "/images/mini_tyainu.webp"
+listScale: 1.06
 detailImage: "/images/mini_tyainu.webp"
 designImage: "/images/design_tyainu.webp"
 relationships: 

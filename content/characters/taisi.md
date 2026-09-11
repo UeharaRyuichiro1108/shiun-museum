@@ -20,6 +20,7 @@ deepRelationship: "〇"
 ng: "特になし"
 creatorComment: "おっとりくんです。よろしくお願いいたします。"
 listImage: "/images/mini_taisi.webp"
+listScale: 0.85
 detailImage: "/images/mini_taisi.webp"
 designImage: "/images/design_taisi.webp"
 relationships: 

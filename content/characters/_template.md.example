@@ -21,6 +21,7 @@ deepRelationship: "深い関係について"
 ng: "NG事項"
 creatorComment: "作者からひと言"
 listImage: "/images/characters/example-list.png"
+listScale: 1
 detailImage: "/images/characters/example-standing.png"
 designImage: "/images/characters/example-design.png"
 relationships:
