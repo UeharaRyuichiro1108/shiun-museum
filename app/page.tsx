@@ -33,7 +33,7 @@ function Top({ onSelect }: { onSelect: (id: string) => void }) {
 function CharacterList({ onSelect }: { onSelect: (id: string) => void }) {
   return <section className="content-section">
     <Heading en="CHARACTERS">キャラクター</Heading><p className="lead">志雲町立博物館に所属する学芸員をご紹介します。</p>
-    <div className="character-grid">{characters.map((character) => <button className="character-card" key={character.id} onClick={() => onSelect(character.id)}><span className="portrait-stack"><img style={{ transform: `scale(${character.listScale})` }} src={character.listImage} alt={`${character.name}の一覧画像`} /></span><b>{displayName(character)}</b><small>{character.role}</small></button>)}</div>
+    <div className="character-grid">{characters.map((character) => <button className="character-card" key={character.id} onClick={() => onSelect(character.id)}><span className="portrait-stack"><img src={character.listImage} alt={`${character.name}の一覧画像`} /></span><b>{displayName(character)}</b><small>{character.role}</small></button>)}</div>
   </section>;
 }
 
