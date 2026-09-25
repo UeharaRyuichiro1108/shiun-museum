@@ -4,7 +4,7 @@ import { type FormEvent, useRef, useState } from 'react';
 import { serialResults } from './serial-results';
 import styles from './halloween.module.css';
 
-type TicketStage = 'idle' | 'ready' | 'printing' | 'snap' | 'revealed';
+type TicketStage = 'idle' | 'ready' | 'feed1' | 'pause1' | 'feed2' | 'pause2' | 'feed3' | 'pause3' | 'snap' | 'revealed';
 
 const prizes = [
   ['3Dムービー', '1%'], ['等身イラスト', '2%'], ['ミニキャラ', '4%'],
@@ -24,6 +24,7 @@ export default function HalloweenPage() {
   const [result, setResult] = useState('');
   const [stage, setStage] = useState<TicketStage>('idle');
   const timers = useRef<number[]>([]);
+  const isPrinting = stage !== 'idle' && stage !== 'revealed';
 
   const clearTimers = () => {
     timers.current.forEach((timer) => window.clearTimeout(timer));
@@ -45,12 +46,17 @@ export default function HalloweenPage() {
     setMessage('コードを確認しました。チケットを発券しています…');
     setResult(prize);
     setStage('ready');
-    timers.current.push(window.setTimeout(() => setStage('printing'), 60));
-    timers.current.push(window.setTimeout(() => setStage('snap'), 1500));
+    timers.current.push(window.setTimeout(() => setStage('feed1'), 80));
+    timers.current.push(window.setTimeout(() => setStage('pause1'), 400));
+    timers.current.push(window.setTimeout(() => setStage('feed2'), 780));
+    timers.current.push(window.setTimeout(() => setStage('pause2'), 1100));
+    timers.current.push(window.setTimeout(() => setStage('feed3'), 1480));
+    timers.current.push(window.setTimeout(() => setStage('pause3'), 1800));
+    timers.current.push(window.setTimeout(() => setStage('snap'), 2220));
     timers.current.push(window.setTimeout(() => {
       setStage('revealed');
       setMessage('抽選結果が確定しました。同じコードでは何度抽選しても同じ結果になります。');
-    }, 1850));
+    }, 2520));
   };
 
   return <div className={styles.page}>
@@ -62,13 +68,23 @@ export default function HalloweenPage() {
       </section>
 
       <section className={styles.rules}>
-        <p>Xで「愛館市立郷土資料館」または「志雲町立博物館」に関するイラスト・小説を投稿するたびに、一度抽選へ参加できます。</p>
+        <div className={styles.ruleGroup}>
+          <h2>参加方法</h2>
+          <p>Xで「愛館市立郷土資料館」または「志雲町立博物館」に関する<br className={styles.desktopBreak} />イラスト・小説を投稿するたびに、一度抽選へ参加できます。</p>
+          <p>投稿内容は問いません。自作したキャラクター、FA、<br className={styles.desktopBreak} />ハロウィンに関係のない内容でも問題ありません。</p>
+          <p>投稿を確認後、DMでシリアルコードをお送りします。<br className={styles.desktopBreak} />このページの発券機へコードを入力すると抽選できます。</p>
+        </div>
         <p className={styles.important}>対象となるのは、<strong>#愛館特別展示室</strong> または <strong>#志雲町立博物館</strong> のタグを付けて投稿された作品のみです。</p>
-        <p>投稿内容は問いません。志雲町立博物館で自作したキャラクター、FA、ハロウィンに関係のない内容でも問題ありません。</p>
-        <p>投稿を確認後、DMでシリアルコードをお送りします。このページの発券機へコードを入力すると抽選できます。抽選結果はコードごとに固定され、同じコードでは何度試しても同じ結果になります。</p>
-        <p>イラスト景品では、描くキャラクターをご指定いただきます。志雲町立博物館以外のキャラクターでも問題ありません。</p>
-        <p>投稿1件につき、シリアルコードとは別に「キャンディ」を1個受け取れます。キャンディを10個集めると、等身イラストを確定で描かせていただきます。</p>
-        <p><strong>キャンディブースト：</strong>FAを投稿した場合は、通常分に加えてキャンディを受け取れます。複数のキャラクターを描いた作品は、描かれたFAキャラクターの人数分を追加で受け取れます。</p>
+        <div className={styles.ruleGroup}>
+          <h2>抽選と景品について</h2>
+          <p>抽選結果はコードごとに固定され、<br className={styles.desktopBreak} />同じコードでは何度試しても同じ結果になります。</p>
+          <p>イラスト景品では、描くキャラクターをご指定いただきます。<br className={styles.desktopBreak} />志雲町立博物館以外のキャラクターでも問題ありません。</p>
+        </div>
+        <div className={styles.ruleGroup}>
+          <h2>キャンディについて</h2>
+          <p>投稿1件につき、シリアルコードとは別に「キャンディ」を1個受け取れます。<br className={styles.desktopBreak} />10個集めると、等身イラストを確定で描かせていただきます。</p>
+          <p><strong>キャンディブースト：</strong>FAを投稿すると、通常分に加えてキャンディを受け取れます。<br className={styles.desktopBreak} />複数人を描いた作品では、FAキャラクターの人数分が追加されます。</p>
+        </div>
       </section>
 
       <section className={styles.prizeSection}>
@@ -81,8 +97,8 @@ export default function HalloweenPage() {
           <div className={styles.machineTop}><span>SHIUN TICKET MACHINE</span><i /></div>
           <form onSubmit={draw} className={styles.form}>
             <label htmlFor="serial-code">シリアルコード</label>
-            <input id="serial-code" value={code} onChange={(event) => setCode(event.target.value)} placeholder="SHIUN-XXXX-XXXX-XXXX" autoComplete="off" spellCheck={false} disabled={stage === 'printing' || stage === 'snap'} />
-            <button type="submit" disabled={stage === 'printing' || stage === 'snap'}>抽選を開始する</button>
+            <input id="serial-code" value={code} onChange={(event) => setCode(event.target.value)} placeholder="SHIUN-XXXX-XXXX-XXXX" autoComplete="off" spellCheck={false} disabled={isPrinting} />
+            <button type="submit" disabled={isPrinting}>抽選を開始する</button>
           </form>
           <p className={styles.message} role="status" aria-live="polite">{message || 'コードを入力し、抽選開始ボタンを押してください。'}</p>
           <div className={styles.slot}><span /></div>
