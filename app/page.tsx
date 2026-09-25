@@ -25,6 +25,7 @@ function Top({ onSelect }: { onSelect: (id: string) => void }) {
     <section className="hero"><p className="eyebrow">SHIUN MUNICIPAL MUSEUM</p><h1>志雲町立<br />博物館</h1><p className="hero-copy">青い鳥を探して</p></section>
     <section className="panel"><p className="eyebrow">INTRODUCTION</p><h2>初めに</h2><p>志雲町立博物館は上原龍一郎による一次創作「愛館市立郷土資料館」の派生創作です。「愛館市立郷土資料館」の世界観を基盤とした相互限定のうちよそ企画となっています。</p><a href="https://aidate-museum.uehararyuichiro.workers.dev/" target="_blank" rel="noreferrer">「愛館市立郷土資料館」公式サイトを見る ↗</a></section>
     <section className="panel"><p className="eyebrow">CURATOR</p><h2>学芸員とは</h2><p>博物館のスタッフです。</p><p>学芸員の見た目は担当の展示物と動物の要素が入ったものになっています。</p><p>学芸員は元々普通の人間です。死亡すると学芸員として雇用されます。</p><p>学芸員は歳をとりませんが、不死ではなく修復できない程の傷を受けると「破棄」となります。</p></section>
+    <a className="halloween-banner" href="/halloween" aria-label="志雲町立博物館ハロウィン企画の特設ページを見る"><img src="/images/haro_bana.webp" alt="志雲町立博物館ハロウィン企画 Trick or Treat" /></a>
     <CharacterList onSelect={onSelect} />
     <Relationships onSelect={onSelect} />
   </>;
