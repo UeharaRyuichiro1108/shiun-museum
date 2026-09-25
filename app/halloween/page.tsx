@@ -82,7 +82,7 @@ export default function HalloweenPage() {
         </div>
         <div className={styles.ruleGroup}>
           <h2>キャンディについて</h2>
-          <p>投稿1件につき、シリアルコードとは別に「キャンディ」を1個受け取れます。<br className={styles.desktopBreak} />10個集めると、等身イラストを確定で描かせていただきます。</p>
+          <p>投稿1件につき、シリアルコードとは別に「キャンディ」を1個受け取れます。<br className={styles.desktopBreak} />5個集めると、等身イラストを確定で描かせていただきます。</p>
           <p><strong>キャンディブースト：</strong>FAを投稿すると、通常分に加えてキャンディを受け取れます。<br className={styles.desktopBreak} />複数人を描いた作品では、FAキャラクターの人数分が追加されます。</p>
         </div>
       </section>
