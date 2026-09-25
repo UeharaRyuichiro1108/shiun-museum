@@ -99,4 +99,5 @@ export const serialResults: Record<string, string> = {
   'f704e916b07e8dc920cbffee1dd3f561b95f6683ebb705521eb576cf6b81a1ae': 'キャンディ×1',
   '9de8927c321f7cbb25c3b2b7606a21229b1fba14f78505213de93ac1940c050d': 'キャンディ×1',
   '784208b7888fe67e11fcab32cdd482bf82b33186c357a6cc4a8df0d71c222ba5': 'キャンディ×2',
+  '98b17de81dad09989e7b719e64b55eb42666e06bb2f040e6e7c289805b0b64a4': '3Dムービー【デバッグ・景品交換不可】',
 };
